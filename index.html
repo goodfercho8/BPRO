@@ -213,7 +213,7 @@
         </span>
       </button>
       <button type="button" class="service-card group relative h-44 md:h-60 overflow-hidden rounded-lg border border-white/15 bg-brand-dark text-left shadow-[0_18px_45px_rgba(0,0,0,.18)] transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-service-title="Bathroom &amp; Screen Enclosure" data-service-body="Bathroom remodeling with tile, waterproofing, vanities, and fixtures, plus screen enclosure installation and repair for patios and pools." aria-label="Learn more about Bathroom and Screen Enclosure"
-        <img src="assets/img/service-bathroom-enclosure.png" alt="" loading="lazy" class="service-card-img absolute inset-0 h-full w-full object-cover transition duration-700 ease-out" />
+        <img src="assets/img/service-bathroom-screen-enclosure.jpg" alt="Bathroom demo and screen enclosure installation by Builders and Renewals Pro" loading="lazy" class="service-card-img absolute inset-0 h-full w-full object-cover transition duration-700 ease-out" />
         <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/10"></span>
         <span class="service-card-sheen absolute inset-0 bg-white/10 opacity-0 transition duration-300"></span>
         <span class="relative z-10 flex h-full flex-col justify-end p-3.5 md:p-5">
@@ -560,8 +560,11 @@
     <!-- Form -->
     <div class="lg:col-span-3 reveal">
       <div class="rounded-xl2 border border-gray-200 shadow-card p-6 md:p-8 bg-white">
-        <!-- NOTE: connect this form later to Email / Webhook / GoHighLevel / Zapier / CRM via the onsubmit handler below -->
+        <!-- Connected to Web3Forms — sends an email to info@buildersandrenewalspro.com on every submission -->
         <form id="leadForm" class="space-y-4" novalidate>
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+          <input type="hidden" name="subject" value="New lead from BuildersPro website">
+          <input type="hidden" name="from_name" value="BuildersPro Website">
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-medium text-ink mb-1.5" for="f-name">Full Name</label>
@@ -867,15 +870,31 @@ document.querySelectorAll('.reveal').forEach(n => io.observe(n));
 /* ---------- Lead form ---------- */
 document.getElementById('leadForm').addEventListener('submit', function (ev) {
   ev.preventDefault();
-  const data = Object.fromEntries(new FormData(this).entries());
+  const form = this;
+  const data = new FormData(form);
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalText = submitBtn ? submitBtn.textContent : '';
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
 
-  /* TODO: connect to a real endpoint. Examples:
-     fetch('YOUR_WEBHOOK_OR_GHL_URL', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) });
-     (GoHighLevel inbound webhook, Zapier catch hook, or your own /api/lead route.) */
-  console.log('Lead captured:', data);
-
-  this.classList.add('hidden');
-  document.getElementById('formSuccess').classList.remove('hidden');
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: data
+  })
+    .then(res => res.json())
+    .then(result => {
+      if (result.success) {
+        form.classList.add('hidden');
+        document.getElementById('formSuccess').classList.remove('hidden');
+      } else {
+        alert('Something went wrong sending your request. Please call or WhatsApp us instead.');
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
+      }
+    })
+    .catch(() => {
+      alert('Something went wrong sending your request. Please call or WhatsApp us instead.');
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
+    });
 });
 
 /* ---------- Year ---------- */
