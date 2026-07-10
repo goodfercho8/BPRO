@@ -62,14 +62,7 @@
   .service-card:active { transform: translateY(1px) scale(.99); }
   .service-card:hover .service-card-img,
   .service-card:focus-visible .service-card-img { transform: scale(1.06); }
-  .service-card:hover .service-card-copy,
-  .service-card:focus-visible .service-card-copy { opacity: 1; transform: translateY(0); }
-  .service-card:hover .service-card-sheen,
-  .service-card:focus-visible .service-card-sheen { opacity: 1; }
   .service-modal-open { overflow: hidden; }
-  @media (max-width: 767px) {
-    .service-card-copy { display: none; }
-  }
 </style>
 </head>
 
@@ -140,64 +133,40 @@
       <p class="mt-3 text-white/80 md:text-lg">A complete range of construction, remodeling, restoration, and repair services for Orlando homes.</p>
     </div>
     <div class="mt-8 md:mt-10 grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-5 reveal">
-      <button type="button" class="service-card group relative h-44 md:h-60 overflow-hidden rounded-lg border border-white/15 bg-brand-dark text-left shadow-[0_18px_45px_rgba(0,0,0,.18)] transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-service-title="Construction &amp; Remodeling" data-service-body="Additions, repairs, structural updates, finishes, and coordinated trades with a clean plan from first walkthrough to final detail." aria-label="Learn more about Construction and Remodeling">
-        <img src="assets/img/service-construction-remodeling.png" alt="" loading="lazy" class="service-card-img absolute inset-0 h-full w-full object-cover transition duration-700 ease-out" />
-        <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/10"></span>
-        <span class="service-card-sheen absolute inset-0 bg-white/10 opacity-0 transition duration-300"></span>
-        <span class="relative z-10 flex h-full flex-col justify-end p-3.5 md:p-5">
-          <span class="text-[11px] md:text-sm font-semibold text-white/75">Build and transform</span>
-          <span class="mt-1 text-[15px] sm:text-lg md:text-2xl font-extrabold leading-tight text-white">Construction <span class="block text-white/85">&amp; Remodeling</span></span>
-          <span class="service-card-copy mt-3 max-w-[18rem] translate-y-2 text-sm leading-relaxed text-white/85 opacity-0 transition duration-300">Coordinated upgrades with clean prep, solid structure, and polished finishes.</span>
+      <button type="button" class="service-card group relative flex flex-col h-44 md:h-60 overflow-hidden rounded-lg border border-white/15 bg-brand-dark text-left shadow-[0_18px_45px_rgba(0,0,0,.18)] transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-service-title="Construction &amp; Remodeling" data-service-body="Additions, repairs, structural updates, finishes, and coordinated trades with a clean plan from first walkthrough to final detail." aria-label="Learn more about Construction and Remodeling">
+        <span class="service-card-title-bar block shrink-0 bg-brand-dark px-3 py-2 md:px-4 md:py-2.5 text-[13px] sm:text-base md:text-xl font-extrabold leading-tight text-white">Construction <span class="text-white/80">&amp; Remodeling</span></span>
+        <span class="relative flex-1 overflow-hidden">
+          <img src="assets/img/service-construction-remodeling.png" alt="" loading="lazy" class="service-card-img absolute inset-0 h-full w-full object-cover transition duration-700 ease-out" />
         </span>
       </button>
-      <button type="button" class="service-card group relative h-44 md:h-60 overflow-hidden rounded-lg border border-white/15 bg-brand-dark text-left shadow-[0_18px_45px_rgba(0,0,0,.18)] transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-service-title="Restoration &amp; Mitigation" data-service-body="Moisture, storm, and water-damage support with documentation, preparation, drying guidance, and repairs that move the home forward." aria-label="Learn more about Restoration and Mitigation">
-        <img src="assets/img/service-restoration-mitigation.png" alt="" loading="lazy" class="service-card-img absolute inset-0 h-full w-full object-cover transition duration-700 ease-out" />
-        <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/10"></span>
-        <span class="service-card-sheen absolute inset-0 bg-white/10 opacity-0 transition duration-300"></span>
-        <span class="relative z-10 flex h-full flex-col justify-end p-3.5 md:p-5">
-          <span class="text-[11px] md:text-sm font-semibold text-white/75">Restore and protect</span>
-          <span class="mt-1 text-[15px] sm:text-lg md:text-2xl font-extrabold leading-tight text-white">Restoration <span class="block text-white/85">&amp; Mitigation</span></span>
-          <span class="service-card-copy mt-3 max-w-[18rem] translate-y-2 text-sm leading-relaxed text-white/85 opacity-0 transition duration-300">Clear support for affected spaces, from inspection through repair-ready prep.</span>
+      <button type="button" class="service-card group relative flex flex-col h-44 md:h-60 overflow-hidden rounded-lg border border-white/15 bg-brand-dark text-left shadow-[0_18px_45px_rgba(0,0,0,.18)] transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-service-title="Restoration &amp; Mitigation" data-service-body="Moisture, storm, and water-damage support with documentation, preparation, drying guidance, and repairs that move the home forward." aria-label="Learn more about Restoration and Mitigation">
+        <span class="service-card-title-bar block shrink-0 bg-brand-dark px-3 py-2 md:px-4 md:py-2.5 text-[13px] sm:text-base md:text-xl font-extrabold leading-tight text-white">Restoration <span class="text-white/80">&amp; Mitigation</span></span>
+        <span class="relative flex-1 overflow-hidden">
+          <img src="assets/img/service-restoration-mitigation.png" alt="" loading="lazy" class="service-card-img absolute inset-0 h-full w-full object-cover transition duration-700 ease-out" />
         </span>
       </button>
-      <button type="button" class="service-card group relative h-44 md:h-60 overflow-hidden rounded-lg border border-white/15 bg-brand-dark text-left shadow-[0_18px_45px_rgba(0,0,0,.18)] transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-service-title="Bathroom &amp; Screen Enclosure" data-service-body="Bathroom remodeling with tile, waterproofing, vanities, and fixtures, plus screen enclosure installation and repair for patios and pools." aria-label="Learn more about Bathroom and Screen Enclosure">
-        <img src="assets/img/service-bathroom-enclosure.png" alt="Bathroom demo and screen enclosure installation by Builders and Renewals Pro" loading="lazy" class="service-card-img absolute inset-0 h-full w-full object-cover transition duration-700 ease-out" />
-        <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/10"></span>
-        <span class="service-card-sheen absolute inset-0 bg-white/10 opacity-0 transition duration-300"></span>
-        <span class="relative z-10 flex h-full flex-col justify-end p-3.5 md:p-5">
-          <span class="text-[11px] md:text-sm font-semibold text-white/75">Inside and outside</span>
-          <span class="mt-1 text-[15px] sm:text-lg md:text-2xl font-extrabold leading-tight text-white">Bathroom <span class="block text-white/85">&amp; Screen Enclosure</span></span>
-          <span class="service-card-copy mt-3 max-w-[18rem] translate-y-2 text-sm leading-relaxed text-white/85 opacity-0 transition duration-300">Refined bathroom finishes plus durable screen enclosures for patios and pools.</span>
+      <button type="button" class="service-card group relative flex flex-col h-44 md:h-60 overflow-hidden rounded-lg border border-white/15 bg-brand-dark text-left shadow-[0_18px_45px_rgba(0,0,0,.18)] transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-service-title="Bathroom &amp; Screen Enclosure" data-service-body="Bathroom remodeling with tile, waterproofing, vanities, and fixtures, plus screen enclosure installation and repair for patios and pools." aria-label="Learn more about Bathroom and Screen Enclosure">
+        <span class="service-card-title-bar block shrink-0 bg-brand-dark px-3 py-2 md:px-4 md:py-2.5 text-[13px] sm:text-base md:text-xl font-extrabold leading-tight text-white">Bathroom <span class="text-white/80">&amp; Screen Enclosure</span></span>
+        <span class="relative flex-1 overflow-hidden">
+          <img src="assets/img/service-bathroom-enclosure.png" alt="Bathroom demo and screen enclosure installation by Builders and Renewals Pro" loading="lazy" class="service-card-img absolute inset-0 h-full w-full object-cover transition duration-700 ease-out" />
         </span>
       </button>
-      <button type="button" class="service-card group relative h-44 md:h-60 overflow-hidden rounded-lg border border-white/15 bg-brand-dark text-left shadow-[0_18px_45px_rgba(0,0,0,.18)] transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-service-title="Concrete &amp; Flooring" data-service-body="Driveways, slabs, pavers, tile, and flooring work focused on durable surfaces, level finishes, and everyday curb appeal." aria-label="Learn more about Concrete and Flooring">
-        <img src="assets/img/service-concrete-flooring.png" alt="" loading="lazy" class="service-card-img absolute inset-0 h-full w-full object-cover transition duration-700 ease-out" />
-        <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/10"></span>
-        <span class="service-card-sheen absolute inset-0 bg-white/10 opacity-0 transition duration-300"></span>
-        <span class="relative z-10 flex h-full flex-col justify-end p-3.5 md:p-5">
-          <span class="text-[11px] md:text-sm font-semibold text-white/75">Built underfoot</span>
-          <span class="mt-1 text-[15px] sm:text-lg md:text-2xl font-extrabold leading-tight text-white">Concrete <span class="block text-white/85">&amp; Flooring</span></span>
-          <span class="service-card-copy mt-3 max-w-[18rem] translate-y-2 text-sm leading-relaxed text-white/85 opacity-0 transition duration-300">Durable surfaces shaped for daily use, clean lines, and curb appeal.</span>
+      <button type="button" class="service-card group relative flex flex-col h-44 md:h-60 overflow-hidden rounded-lg border border-white/15 bg-brand-dark text-left shadow-[0_18px_45px_rgba(0,0,0,.18)] transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-service-title="Concrete &amp; Flooring" data-service-body="Driveways, slabs, pavers, tile, and flooring work focused on durable surfaces, level finishes, and everyday curb appeal." aria-label="Learn more about Concrete and Flooring">
+        <span class="service-card-title-bar block shrink-0 bg-brand-dark px-3 py-2 md:px-4 md:py-2.5 text-[13px] sm:text-base md:text-xl font-extrabold leading-tight text-white">Concrete <span class="text-white/80">&amp; Flooring</span></span>
+        <span class="relative flex-1 overflow-hidden">
+          <img src="assets/img/service-concrete-flooring.png" alt="" loading="lazy" class="service-card-img absolute inset-0 h-full w-full object-cover transition duration-700 ease-out" />
         </span>
       </button>
-      <button type="button" class="service-card group relative h-44 md:h-60 overflow-hidden rounded-lg border border-white/15 bg-brand-dark text-left shadow-[0_18px_45px_rgba(0,0,0,.18)] transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-service-title="Roofing &amp; Painting" data-service-body="Roof repairs, soffits, gutters, interior and exterior paint, and careful preparation for long-lasting protection and a sharper finish." aria-label="Learn more about Roofing and Painting">
-        <img src="assets/img/service-roofing-painting.png" alt="" loading="lazy" class="service-card-img absolute inset-0 h-full w-full object-cover transition duration-700 ease-out" />
-        <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/10"></span>
-        <span class="service-card-sheen absolute inset-0 bg-white/10 opacity-0 transition duration-300"></span>
-        <span class="relative z-10 flex h-full flex-col justify-end p-3.5 md:p-5">
-          <span class="text-[11px] md:text-sm font-semibold text-white/75">Protect and finish</span>
-          <span class="mt-1 text-[15px] sm:text-lg md:text-2xl font-extrabold leading-tight text-white">Roofing <span class="block text-white/85">&amp; Painting</span></span>
-          <span class="service-card-copy mt-3 max-w-[18rem] translate-y-2 text-sm leading-relaxed text-white/85 opacity-0 transition duration-300">Exterior protection and crisp finishes with careful prep at every edge.</span>
+      <button type="button" class="service-card group relative flex flex-col h-44 md:h-60 overflow-hidden rounded-lg border border-white/15 bg-brand-dark text-left shadow-[0_18px_45px_rgba(0,0,0,.18)] transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-service-title="Roofing &amp; Painting" data-service-body="Roof repairs, soffits, gutters, interior and exterior paint, and careful preparation for long-lasting protection and a sharper finish." aria-label="Learn more about Roofing and Painting">
+        <span class="service-card-title-bar block shrink-0 bg-brand-dark px-3 py-2 md:px-4 md:py-2.5 text-[13px] sm:text-base md:text-xl font-extrabold leading-tight text-white">Roofing <span class="text-white/80">&amp; Painting</span></span>
+        <span class="relative flex-1 overflow-hidden">
+          <img src="assets/img/service-roofing-painting.png" alt="" loading="lazy" class="service-card-img absolute inset-0 h-full w-full object-cover transition duration-700 ease-out" />
         </span>
       </button>
-      <button type="button" class="service-card group relative h-44 md:h-60 overflow-hidden rounded-lg border border-white/15 bg-brand-dark text-left shadow-[0_18px_45px_rgba(0,0,0,.18)] transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-service-title="Kitchen &amp; Fence" data-service-body="Cabinets, counters, backsplash, functional kitchen upgrades, outdoor fencing, and exterior details that make the home feel complete." aria-label="Learn more about Kitchen and Fence">
-        <img src="assets/img/service-kitchen-fence.png" alt="" loading="lazy" class="service-card-img absolute inset-0 h-full w-full object-cover transition duration-700 ease-out" />
-        <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/10"></span>
-        <span class="service-card-sheen absolute inset-0 bg-white/10 opacity-0 transition duration-300"></span>
-        <span class="relative z-10 flex h-full flex-col justify-end p-3.5 md:p-5">
-          <span class="text-[11px] md:text-sm font-semibold text-white/75">Inside and outside</span>
-          <span class="mt-1 text-[15px] sm:text-lg md:text-2xl font-extrabold leading-tight text-white">Kitchen <span class="block text-white/85">&amp; Fence</span></span>
-          <span class="service-card-copy mt-3 max-w-[18rem] translate-y-2 text-sm leading-relaxed text-white/85 opacity-0 transition duration-300">Functional upgrades that connect daily living with a cleaner exterior.</span>
+      <button type="button" class="service-card group relative flex flex-col h-44 md:h-60 overflow-hidden rounded-lg border border-white/15 bg-brand-dark text-left shadow-[0_18px_45px_rgba(0,0,0,.18)] transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-service-title="Kitchen &amp; Fence" data-service-body="Cabinets, counters, backsplash, functional kitchen upgrades, outdoor fencing, and exterior details that make the home feel complete." aria-label="Learn more about Kitchen and Fence">
+        <span class="service-card-title-bar block shrink-0 bg-brand-dark px-3 py-2 md:px-4 md:py-2.5 text-[13px] sm:text-base md:text-xl font-extrabold leading-tight text-white">Kitchen <span class="text-white/80">&amp; Fence</span></span>
+        <span class="relative flex-1 overflow-hidden">
+          <img src="assets/img/service-kitchen-fence.png" alt="" loading="lazy" class="service-card-img absolute inset-0 h-full w-full object-cover transition duration-700 ease-out" />
         </span>
       </button>
     </div>
@@ -383,7 +352,7 @@
       </article>
       <article class="rounded-xl2 overflow-hidden border border-gray-100 shadow-card bg-white group reveal">
         <div class="overflow-hidden aspect-[4/3]"><img src="assets/img/bathroom-remodel-shower-glass.jpeg" alt="Glass shower enclosure installed by Builders and Renewals Pro" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-        <div class="p-4"><p class="text-xs font-semibold text-brand uppercase tracking-wide">Bathroom Remodeling</p><p class="mt-0.5 font-semibold text-ink text-sm">Glass Shower Enclosure Detail</p></div>
+        <div class="p-4"><p class="text-xs font-semibold text-brand uppercase tracking-wide">Bathroom Remodeling</p><p class="mt-0.5 font-semibold text-ink text-sm">Shower Glass</p></div>
       </article>
       <article class="rounded-xl2 overflow-hidden border border-gray-100 shadow-card bg-white group reveal">
         <div class="overflow-hidden aspect-[4/3]"><img src="assets/img/bathroom-remodel-tile-wall.jpeg" alt="Large format tile wall installation in Orlando bathroom remodel" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
